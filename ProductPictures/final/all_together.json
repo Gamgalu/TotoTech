@@ -1,0 +1,828 @@
+{
+  "products":[
+    {
+    "brand": {
+        "name": "Wrangler"
+    },
+    "lastModifiedOfSource": "2019-05-10T11:05:16.113Z",
+    "lastModified": "2019-05-11T17:41:31.851Z",
+    "variations": [
+        {
+            "id": "603298762",
+            "articleNumber": "782314",
+            "productUrl": "/p/wrangler-t-shirt-circuit-tee-mit-retroprint-603298391/#variationId=603298762",
+            "name": "Wrangler T-Shirt »Circuit Tee« mit Retroprint",
+            "price": {
+                "retailPrice": 1599,
+                "suggestedRetailPrice": 2995,
+                "oldPrice": 1599,
+                "sale": true
+            },
+            "images": [
+                {
+                    "id": "20718352"
+                },
+                {
+                    "id": "20718354"
+                },
+                {
+                    "id": "20718358"
+                },
+                {
+                    "id": "20744430"
+                },
+                {
+                    "id": "20718868"
+                },
+                {
+                    "id": "20718363"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "blau",
+                    "colorName": "blau"
+                }
+            ],
+            "availability": {
+                "code": "AVAILABLE"
+            },
+            "deal": {
+                "name": "Topmarken reduziert_HAKA",
+                "id": "5b2ccc0be85b450005ff4d1e"
+            }
+        }
+    ],
+    "categories": [
+        {
+            "path": "Mode>Herren>Shirts>T-Shirts",
+            "assortment": "Mode",
+            "targetGroup": "Herren"
+        }
+    ],
+    "_id": "603298391"
+},
+{
+    "brand": {
+        "name": "TOM TAILOR"
+    },
+    "lastModifiedOfSource": "2019-05-11T19:02:25.601Z",
+    "lastModified": "2019-05-11T21:56:00.991Z",
+    "variations": [
+        {
+            "id": "717214094",
+            "articleNumber": "50532529",
+            "productUrl": "/p/tom-tailor-rundhalsshirt-mit-frontprint-717212916/#variationId=717214094",
+            "name": "TOM TAILOR Rundhalsshirt mit Frontprint",
+            "price": {
+                "retailPrice": 999,
+                "suggestedRetailPrice": 1599,
+                "oldPrice": 1599,
+                "sale": true
+            },
+            "images": [
+                {
+                    "id": "29479578"
+                },
+                {
+                    "id": "29478741"
+                },
+                {
+                    "id": "29479500"
+                },
+                {
+                    "id": "30095873"
+                },
+                {
+                    "id": "29478941"
+                },
+                {
+                    "id": "29479483"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "orange",
+                    "colorName": "orange"
+                }
+            ],
+            "availability": {
+                "code": "SOLDOUT"
+            }
+        },
+        {
+            "id": "717210074",
+            "articleNumber": "67692317",
+            "productUrl": "/p/tom-tailor-rundhalsshirt-mit-frontprint-717212916/#variationId=717210074",
+            "name": "TOM TAILOR Rundhalsshirt mit Frontprint",
+            "price": {
+                "retailPrice": 999,
+                "suggestedRetailPrice": 1599,
+                "oldPrice": 1599,
+                "sale": true
+            },
+            "images": [
+                {
+                    "id": "29479175"
+                },
+                {
+                    "id": "29478776"
+                },
+                {
+                    "id": "29479222"
+                },
+                {
+                    "id": "30095763"
+                },
+                {
+                    "id": "29479395"
+                },
+                {
+                    "id": "29478984"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "blau",
+                    "colorName": "blau"
+                }
+            ],
+            "availability": {
+                "code": "AVAILABLE"
+            },
+            "deal": {
+                "name": "Topmarken reduziert_HAKA",
+                "id": "5b2ccc0be85b450005ff4d1e"
+            }
+        },
+        {
+            "id": "717214506",
+            "articleNumber": "79298116",
+            "productUrl": "/p/tom-tailor-rundhalsshirt-mit-frontprint-717212916/#variationId=717214506",
+            "name": "TOM TAILOR Rundhalsshirt mit Frontprint",
+            "price": {
+                "retailPrice": 999,
+                "suggestedRetailPrice": 1599,
+                "oldPrice": 1599,
+                "sale": true
+            },
+            "images": [
+                {
+                    "id": "29479966"
+                },
+                {
+                    "id": "29479513"
+                },
+                {
+                    "id": "29478883"
+                },
+                {
+                    "id": "30095750"
+                },
+                {
+                    "id": "29480044"
+                },
+                {
+                    "id": "29479055"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "blau",
+                    "colorName": "navy"
+                }
+            ],
+            "availability": {
+                "code": "SOLDOUT"
+            },
+            "deal": {
+                "name": "Topmarken reduziert_HAKA",
+                "id": "5b2ccc0be85b450005ff4d1e"
+            }
+        }
+    ],
+    "categories": [
+        {
+            "path": "Mode>Herren>Shirts>T-Shirts",
+            "assortment": "Mode",
+            "targetGroup": "Herren"
+        }
+    ],
+    "_id": "717212916"
+},
+{
+    "brand": {
+        "name": "Jack & Jones"
+    },
+    "lastModifiedOfSource": "2019-05-12T01:12:30.907Z",
+    "lastModified": "2019-05-12T01:14:01.321Z",
+    "variations": [
+        {
+            "id": "696995667",
+            "articleNumber": "19429056",
+            "productUrl": "/p/jack-jones-t-shirt-kompo-tee-538986060/#variationId=696995667",
+            "name": "Jack & Jones T-Shirt »KOMPO TEE«",
+            "price": {
+                "retailPrice": 999,
+                "oldPrice": 1799,
+                "sale": true
+            },
+            "images": [
+                {
+                    "id": "28397902"
+                },
+                {
+                    "id": "28398126"
+                },
+                {
+                    "id": "28398110"
+                },
+                {
+                    "id": "28564077"
+                },
+                {
+                    "id": "28398128"
+                },
+                {
+                    "id": "28397899"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "blau",
+                    "colorName": "kobalt"
+                }
+            ],
+            "availability": {
+                "code": "AVAILABLE"
+            }
+        },
+        {
+    "id": "538985985",
+    "articleNumber": "481745",
+    "productUrl": "/p/jack-jones-t-shirt-kompo-tee-538986060/#variationId=538985985",
+    "name": "Jack & Jones T-Shirt »KOMPO TEE«",
+    "price": {
+        "retailPrice": 999,
+        "oldPrice": 1799,
+        "sale": true
+    },
+    "images": [
+        {
+            "id": "28398007"
+        },
+        {
+            "id": "28398144"
+        },
+        {
+            "id": "28397892"
+        },
+        {
+            "id": "28564098"
+        },
+        {
+            "id": "28397759"
+        },
+        {
+            "id": "28398138"
+        },
+        {
+            "id": "17404909"
+        }
+    ],
+    "dimensions": [
+        {
+            "type": "COLOR",
+            "baseColor": "blau",
+            "colorName": "marine"
+        }
+    ],
+    "availability": {
+        "code": "AVAILABLE"
+    }
+},
+{
+    "id": "696995491",
+    "articleNumber": "52652035",
+    "productUrl": "/p/jack-jones-t-shirt-kompo-tee-538986060/#variationId=696995491",
+    "name": "Jack & Jones T-Shirt »KOMPO TEE«",
+    "price": {
+        "retailPrice": 999,
+        "oldPrice": 1799,
+        "sale": true
+    },
+    "images": [
+        {
+            "id": "28397919"
+        },
+        {
+            "id": "28397887"
+        },
+        {
+            "id": "28397885"
+        },
+        {
+            "id": "28565215"
+        },
+        {
+            "id": "28397872"
+        },
+        {
+            "id": "28397915"
+        }
+    ],
+    "dimensions": [
+        {
+            "type": "COLOR",
+            "baseColor": "weiß",
+            "colorName": "weiß"
+        }
+    ],
+    "availability": {
+        "code": "AVAILABLE"
+    },
+    "deal": {
+        "name": "Topmarken reduziert_HAKA",
+        "id": "5b2ccc0be85b450005ff4d1e"
+    }
+},
+{
+    "id": "696995164",
+    "articleNumber": "81660707",
+    "productUrl": "/p/jack-jones-t-shirt-kompo-tee-538986060/#variationId=696995164",
+    "name": "Jack & Jones T-Shirt »KOMPO TEE«",
+    "price": {
+        "retailPrice": 999,
+        "oldPrice": 1799,
+        "sale": true
+    },
+    "images": [
+        {
+            "id": "28397905"
+        },
+        {
+            "id": "28397891"
+        },
+        {
+            "id": "28397920"
+        },
+        {
+            "id": "28564672"
+        },
+        {
+            "id": "28397881"
+        },
+        {
+            "id": "28397917"
+        }
+    ],
+    "dimensions": [
+        {
+            "type": "COLOR",
+            "baseColor": "rot",
+            "colorName": "rot"
+        }
+    ],
+    "availability": {
+        "code": "AVAILABLE"
+    }
+}
+],
+    "categories": [
+        {
+            "path": "Mode>Herren>Shirts>T-Shirts",
+            "assortment": "Mode",
+            "targetGroup": "Herren"
+        }
+    ],
+    "_id": "538986060"
+},
+{
+    "brand": {
+        "name": "Jack & Jones"
+    },
+    "lastModifiedOfSource": "2019-05-10T21:37:25.084Z",
+    "lastModified": "2019-05-11T17:51:17.382Z",
+    "variations": [
+        {
+            "id": "703175008",
+            "articleNumber": "29162948",
+            "productUrl": "/p/jack-jones-t-shirt-summertime-tee-704217114/#variationId=703175008",
+            "name": "Jack & Jones T-Shirt »SUMMERTIME TEE«",
+            "price": {
+                "retailPrice": 1499,
+                "suggestedRetailPrice": 1499,
+                "oldPrice": 1499,
+                "sale": false
+            },
+            "images": [
+                {
+                    "id": "28546146"
+                },
+                {
+                    "id": "28544797"
+                },
+                {
+                    "id": "28545931"
+                },
+                {
+                    "id": "28564163"
+                },
+                {
+                    "id": "28545299"
+                },
+                {
+                    "id": "28545233"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "grau",
+                    "colorName": "hellgrau-meliert"
+                }
+            ],
+            "availability": {
+                "code": "AVAILABLE"
+            }
+        }
+    ],
+    "categories": [
+        {
+            "path": "Mode>Herren>Shirts>T-Shirts",
+            "assortment": "Mode",
+            "targetGroup": "Herren"
+        }
+    ],
+    "_id": "704217114"
+},
+{
+    "brand": {
+        "name": "Jack & Jones"
+    },
+    "lastModifiedOfSource": "2019-05-12T01:12:37.703Z",
+    "lastModified": "2019-05-12T07:36:04.164Z",
+    "variations": [
+        {
+            "id": "642062214",
+            "articleNumber": "33862449",
+            "productUrl": "/p/jack-jones-t-shirt-logo-tee-crew-neck-642062148/#variationId=642062214",
+            "name": "Jack & Jones T-Shirt »LOGO TEE CREW NECK«",
+            "price": {
+                "retailPrice": 1299,
+                "suggestedRetailPrice": 1299,
+                "oldPrice": 1299,
+                "sale": false
+            },
+            "images": [
+                {
+                    "id": "22929330"
+                },
+                {
+                    "id": "22929331"
+                },
+                {
+                    "id": "22929332"
+                },
+                {
+                    "id": "23942059"
+                },
+                {
+                    "id": "22929333"
+                },
+                {
+                    "id": "22929334"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "blau",
+                    "colorName": "navy"
+                }
+            ],
+            "availability": {
+                "code": "DELAYED"
+            }
+        }
+    ],
+    "categories": [
+        {
+            "path": "Mode>Herren>Shirts>T-Shirts",
+            "assortment": "Mode",
+            "targetGroup": "Herren"
+        }
+    ],
+    "_id": "642062148"
+  },
+  {
+    "brand": {
+        "name": "adidas Originals"
+    },
+    "lastModifiedOfSource": "2019-05-12T09:12:33.743Z",
+    "lastModified": "2019-05-12T09:14:01.132Z",
+    "variations": [
+        {
+            "id": "699776601",
+            "articleNumber": "63834921",
+            "productUrl": "/p/adidas-originals-t-shirt-camo-tee-699912811/#variationId=699776601",
+            "name": "adidas Originals T-Shirt »CAMO TEE«",
+            "price": {
+                "retailPrice": 3999,
+                "oldPrice": 3999,
+                "sale": false
+            },
+            "images": [
+                {
+                    "id": "29541325"
+                },
+                {
+                    "id": "29541461"
+                },
+                {
+                    "id": "29541094"
+                },
+                {
+                    "id": "29542055"
+                },
+                {
+                    "id": "29541520"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "bunt",
+                    "colorName": "tarnfarben"
+                }
+            ],
+            "availability": {
+                "code": "SOLDOUT"
+            }
+        }
+      ],
+      "categories": [
+          {
+              "path": "Mode>Herren>Shirts>T-Shirts",
+              "assortment": "Mode",
+              "targetGroup": "Herren"
+          },
+          {
+              "path": "Mode>Herren>Sportbekleidung>Sportshirts>T-Shirts",
+              "assortment": "Mode",
+              "targetGroup": "Herren"
+          }
+      ],
+      "_id": "699912811"
+    },
+    {
+    "brand": {
+        "name": "PUMA"
+    },
+    "lastModifiedOfSource": "2019-05-11T07:58:37.548Z",
+    "lastModified": "2019-05-11T17:50:37.158Z",
+    "variations": [
+        {
+            "id": "707903680",
+            "articleNumber": "13344428",
+            "productUrl": "/p/puma-t-shirt-ess-logo-tee-707902801/#variationId=707903680",
+            "name": "PUMA T-Shirt »ESS LOGO TEE«",
+            "price": {
+                "retailPrice": 1999,
+                "oldPrice": 1999,
+                "sale": false
+            },
+            "images": [
+                {
+                    "id": "30056695"
+                },
+                {
+                    "id": "30055570"
+                },
+                {
+                    "id": "30054467"
+                },
+                {
+                    "id": "32405588"
+                },
+                {
+                    "id": "30054587"
+                },
+                {
+                    "id": "30054648"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "grün",
+                    "colorName": "grün"
+                }
+            ],
+            "availability": {
+                "code": "AVAILABLE"
+            }
+        }
+      ],
+      "categories": [
+        {
+            "path": "Mode>Herren>Shirts>T-Shirts",
+            "assortment": "Mode",
+            "targetGroup": "Herren"
+        },
+        {
+            "path": "Mode>Herren>Sportbekleidung>Sportshirts>T-Shirts",
+            "assortment": "Mode",
+            "targetGroup": "Herren"
+        }
+    ],
+    "_id": "707902801"
+},
+{
+    "brand": {
+        "name": "Nike Sportswear"
+    },
+    "lastModifiedOfSource": "2019-05-12T07:37:32.816Z",
+    "lastModified": "2019-05-12T07:38:02.676Z",
+    "variations": [
+        {
+            "id": "713293967",
+            "articleNumber": "26612660",
+            "productUrl": "/p/nike-sportswear-t-shirt-m-nsw-tee-just-do-it-swoosh-713293854/#variationId=713293967",
+            "name": "Nike Sportswear T-Shirt »M NSW TEE JUST DO IT SWOOSH«",
+            "price": {
+                "retailPrice": 1999,
+                "oldPrice": 1999,
+                "sale": false
+            },
+            "images": [
+                {
+                    "id": "31816198"
+                },
+                {
+                    "id": "31817513"
+                },
+                {
+                    "id": "31819834"
+                },
+                {
+                    "id": "31816841"
+                },
+                {
+                    "id": "31818612"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "weiß",
+                    "colorName": "weiß"
+                }
+            ],
+            "availability": {
+                "code": "AVAILABLE"
+            }
+        }
+      ],
+  "categories": [
+      {
+          "path": "Mode>Herren>Shirts>T-Shirts",
+          "assortment": "Mode",
+          "targetGroup": "Herren"
+      },
+      {
+          "path": "Mode>Herren>Sportbekleidung>Sportshirts>T-Shirts",
+          "assortment": "Mode",
+          "targetGroup": "Herren"
+      }
+  ],
+  "_id": "713293854"
+},
+{
+    "brand": {
+        "name": "Levi's®"
+    },
+    "lastModifiedOfSource": "2019-05-12T05:02:31.076Z",
+    "lastModified": "2019-05-12T07:56:01.156Z",
+    "variations": [
+        {
+            "id": "707495539",
+            "articleNumber": "26912414",
+            "productUrl": "/p/levis-t-shirt-707875740/#variationId=707495539",
+            "name": "Levi's® T-Shirt",
+            "price": {
+                "retailPrice": 2899,
+                "suggestedRetailPrice": 2995,
+                "oldPrice": 2899,
+                "sale": false
+            },
+            "images": [
+                {
+                    "id": "29486319"
+                },
+                {
+                    "id": "29485316"
+                },
+                {
+                    "id": "29487136"
+                },
+                {
+                    "id": "29498287"
+                },
+                {
+                    "id": "29484789"
+                },
+                {
+                    "id": "29487086"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "blau",
+                    "colorName": "rot-blau"
+                }
+            ],
+            "availability": {
+                "code": "SOLDOUT"
+            }
+        }
+      ],
+  "categories": [
+      {
+          "path": "Mode>Herren>Shirts>T-Shirts",
+          "assortment": "Mode",
+          "targetGroup": "Herren"
+      }
+  ],
+  "_id": "707875740"
+},
+{
+    "brand": {
+        "name": "John Devin"
+    },
+    "lastModifiedOfSource": "2019-05-12T07:42:32.872Z",
+    "lastModified": "2019-05-12T07:44:02.143Z",
+    "variations": [
+        {
+            "id": "639239431",
+            "articleNumber": "67783817",
+            "productUrl": "/p/john-devin-t-shirt-mit-inside-out-print-639238637/#variationId=639239431",
+            "name": "John Devin T-Shirt mit Inside out Print",
+            "price": {
+                "retailPrice": 999,
+                "oldPrice": 1999,
+                "sale": true
+            },
+            "images": [
+                {
+                    "id": "25338116"
+                },
+                {
+                    "id": "25339834"
+                },
+                {
+                    "id": "25339166"
+                },
+                {
+                    "id": "25520598"
+                },
+                {
+                    "id": "25339901"
+                },
+                {
+                    "id": "25339760"
+                }
+            ],
+            "dimensions": [
+                {
+                    "type": "COLOR",
+                    "baseColor": "weiß",
+                    "colorName": "weiß-marine-rot-gestreift"
+                }
+            ],
+            "availability": {
+                "code": "AVAILABLE"
+            },
+            "deal": {
+                "name": "Topmarken reduziert_HAKA",
+                "id": "5b2ccc0be85b450005ff4d1e"
+            }
+        }
+      ],
+  "categories": [
+      {
+          "path": "Mode>Herren>Shirts>T-Shirts",
+          "assortment": "Mode",
+          "targetGroup": "Herren"
+      }
+  ],
+  "_id": "639238637"
+}
+  ]
+}
