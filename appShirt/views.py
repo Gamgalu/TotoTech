@@ -6,6 +6,9 @@ def index(request):
 def preview(request):
     return render(request, 'appShirt/preview.html')
 
+def newpreview(request):
+    return render(request, 'appShirt/newpreview.html')
+
 def landingpage(request):
     return render(request, 'appShirt/landingpage.html')
 
