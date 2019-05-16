@@ -1,7 +1,8 @@
 $( document ).ready(function() {
-    alert("Hello World");
-    function select(was) {
+    jQuery.select = function select(was) {
         $("#" + was).toggleClass("has-background-success");
     }
-    select("anzuege");
+
+    // select("anzuege");
+
   }); 
