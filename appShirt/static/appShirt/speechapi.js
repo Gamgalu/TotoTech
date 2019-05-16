@@ -11,7 +11,23 @@ if (annyang) {
         // alert('Auswahl: ' + myParam);
         console.log(myParam);
         $.select(myParam);
+        if($.countgreen("") > 0) {
+
+
+            $("#weiterdiv").show();
+        } else {
+            $("#weiterdiv").hide();
+        }
     };
+
+    var weiter = function (myParam) {
+        console.log(myParam);
+
+    }
+
+    function iwas(was) {
+        alert("iwas" + was);
+    }
 
 
     function iwas(was) {
@@ -35,7 +51,6 @@ if (annyang) {
         'sweatshirt': function() {  auswahl('sweatshirt'); },
         'sakko': function() { auswahl('sakko'); },
         'weiter': function() { auswahl('weiter'); },
-
     };
 
     // Add our commands to annyang
