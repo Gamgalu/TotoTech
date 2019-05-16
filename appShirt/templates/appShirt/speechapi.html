@@ -12,17 +12,29 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
 <script>
 
-  
+// first we make sure annyang started succesfully
 if (annyang) {
   console.log('Outside');
-  // Let's define a command.
+
+  var hallo = function() {
+    alert('Hallo Welt!');
+  };
+
+  var pullover = function() {
+    alert('Pullover!');
+  };
+
+  // List of all Commands
   var commands = {
-    'hello': function() { alert('Hello world!'); };
-    'test': function() { document.getElementById("demo").innerHTML = "Hello JavaScript!"; };
+    'hallo':      hallo,
+    'pullover':   pullover,
   };
 
   // Add our commands to annyang
   annyang.addCommands(commands);
+
+  // Change language to german
+  annyang.setLanguage('de-DE');
 
   // Start listening.
   annyang.start();
