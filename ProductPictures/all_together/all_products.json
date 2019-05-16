@@ -1,0 +1,158 @@
+{
+  "products":[
+    {
+        "brand": {
+            "name": "Wrangler"
+        },
+        "lastModifiedOfSource": "2019-05-10T11:05:16.113Z",
+        "lastModified": "2019-05-11T17:41:31.851Z",
+        "variations": [
+            {
+                "id": "603298762",
+                "articleNumber": "782314",
+                "productUrl": "/p/wrangler-t-shirt-circuit-tee-mit-retroprint-603298391/#variationId=603298762",
+                "name": "Wrangler T-Shirt »Circuit Tee« mit Retroprint",
+                "price": {
+                    "retailPrice": 1599,
+                    "suggestedRetailPrice": 2995,
+                    "oldPrice": 1599,
+                    "sale": true
+                },
+                "images": [
+                    {
+                        "id": "20718868"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "type": "COLOR",
+                        "baseColor": "blau",
+                        "colorName": "blau"
+                    }
+                ],
+                "availability": {
+                    "code": "AVAILABLE"
+                },
+                "deal": {
+                    "name": "Topmarken reduziert_HAKA",
+                    "id": "5b2ccc0be85b450005ff4d1e"
+                }
+            }
+        ],
+        "categories": [
+            {
+                "path": "Mode>Herren>Shirts>T-Shirts",
+                "assortment": "Mode",
+                "targetGroup": "Herren"
+            }
+        ],
+        "_id": "603298391"
+    },
+    {
+        "brand": {
+            "name": "TOM TAILOR"
+        },
+        "lastModifiedOfSource": "2019-05-11T19:02:25.601Z",
+        "lastModified": "2019-05-11T21:56:00.991Z",
+        "variations": [
+            {
+                "id": "717214094",
+                "articleNumber": "50532529",
+                "productUrl": "/p/tom-tailor-rundhalsshirt-mit-frontprint-717212916/#variationId=717214094",
+                "name": "TOM TAILOR Rundhalsshirt mit Frontprint",
+                "price": {
+                    "retailPrice": 999,
+                    "suggestedRetailPrice": 1599,
+                    "oldPrice": 1599,
+                    "sale": true
+                },
+                "images": [
+                    {
+                        "id": "29478941"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "type": "COLOR",
+                        "baseColor": "orange",
+                        "colorName": "orange"
+                    }
+                ],
+                "availability": {
+                    "code": "SOLDOUT"
+                }
+            },
+            {
+                "id": "717210074",
+                "articleNumber": "67692317",
+                "productUrl": "/p/tom-tailor-rundhalsshirt-mit-frontprint-717212916/#variationId=717210074",
+                "name": "TOM TAILOR Rundhalsshirt mit Frontprint",
+                "price": {
+                    "retailPrice": 999,
+                    "suggestedRetailPrice": 1599,
+                    "oldPrice": 1599,
+                    "sale": true
+                },
+                "images": [
+                    {
+                        "id": "29479395"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "type": "COLOR",
+                        "baseColor": "blau",
+                        "colorName": "blau"
+                    }
+                ],
+                "availability": {
+                    "code": "AVAILABLE"
+                },
+                "deal": {
+                    "name": "Topmarken reduziert_HAKA",
+                    "id": "5b2ccc0be85b450005ff4d1e"
+                }
+            },
+            {
+                "id": "717214506",
+                "articleNumber": "79298116",
+                "productUrl": "/p/tom-tailor-rundhalsshirt-mit-frontprint-717212916/#variationId=717214506",
+                "name": "TOM TAILOR Rundhalsshirt mit Frontprint",
+                "price": {
+                    "retailPrice": 999,
+                    "suggestedRetailPrice": 1599,
+                    "oldPrice": 1599,
+                    "sale": true
+                },
+                "images": [
+                    {
+                        "id": "29480044"
+                    }
+                ],
+                "dimensions": [
+                    {
+                        "type": "COLOR",
+                        "baseColor": "blau",
+                        "colorName": "navy"
+                    }
+                ],
+                "availability": {
+                    "code": "SOLDOUT"
+                },
+                "deal": {
+                    "name": "Topmarken reduziert_HAKA",
+                    "id": "5b2ccc0be85b450005ff4d1e"
+                }
+            }
+        ],
+        "categories": [
+            {
+                "path": "Mode>Herren>Shirts>T-Shirts",
+                "assortment": "Mode",
+                "targetGroup": "Herren"
+            }
+        ],
+        "_id": "717212916"
+    }
+  ]
+}
