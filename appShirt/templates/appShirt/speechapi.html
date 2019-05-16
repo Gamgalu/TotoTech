@@ -2,9 +2,30 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'appShirt/speechapi.css' %}">
 
-<a href="https://www.w3schools.com">Visit W3Schools</a>
 
 
 <script src="{% static 'appShirt/speechapi.js' %}"></script>
 
 <p>Speech Api Test</p>
+<p id="demo">JavaScript can change HTML content.</p>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+<script>
+
+  
+if (annyang) {
+  console.log('Outside');
+  // Let's define a command.
+  var commands = {
+    'hello': function() { alert('Hello world!'); };
+    'test': function() { document.getElementById("demo").innerHTML = "Hello JavaScript!"; };
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening.
+  annyang.start();
+  console.log('Annyang started');
+}
+</script>
