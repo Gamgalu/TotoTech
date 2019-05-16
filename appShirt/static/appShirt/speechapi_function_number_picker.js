@@ -13,7 +13,30 @@ if (annyang) {
   };
 
   var zeigMir = function(nummer) {
-    console.log(nummer)
+    console.log('Output from API:' + nummer);
+    var integerFromVoice = parseInt(nummer, 10);
+    if(Number.isInteger(integerFromVoice)){
+      //Number already detected
+    }
+    else {
+      // In four fixed cases, the speech recognition does not detect a nu
+      switch(nummer){
+        case 'eins':
+          integerFromVoice = 1;
+          break;
+        case 'drei':
+          integerFromVoice = 3;
+          break;
+        case 'vier':
+          integerFromVoice = 4;
+          break;
+        case 'fünf':
+          integerFromVoice = 5;
+          break;
+      }
+    }
+    console.log('Passed Output:' + integerFromVoice);
+    return integerFromVoice;
   }
 
   // List of all Commands

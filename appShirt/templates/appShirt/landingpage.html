@@ -13,12 +13,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>ShirtFinder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
 <script src="{% static 'appShirt/landingpage.js' %}"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+
+<script src="{% static 'appShirt/speechapi.js' %}"></script>
+
 
 </head>
 
@@ -31,7 +36,8 @@
                         ShirtFinder
                     </h1>
                     <h2 class="subtitle">
-                        Wählen Sie bitte eine Kategorie aus
+                        Sprechen Sie bitte nur eine Kategorie aus und warten Sie, bis es grün aufleuchtet. <br>
+                        Anschließend sagen Sie weiter.
                     </h2>
                 </div>
             </div>
@@ -39,27 +45,27 @@
         <br>
         <div class="tile is-ancestor">
             <div class="tile is-parent">
-                <article class="tile is-child box has-background-success" id="thsirts">
-                    <p class="title">T-Shirts</p>
-                    <p class="subtitle">ddffffd</p>
+                <article class="tile is-child box" id="thsirt">
+                    <p class="title">Shirt</p>
+                    <!-- <p class="subtitle">ddffffd</p> -->
                 </article>
             </div>
             <div class="tile is-parent">
-                <article class="tile is-child box" id="schlafshirts">
-                    <p class="title">Schlafshirts</p>
-                    <p class="subtitle">Subtitle</p>
+                <article class="tile is-child box" id="schlafshirt">
+                    <p class="title">Schlafshirt</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
                 </article>
             </div>
             <div class="tile is-parent">
-                <article class="tile has-background-success	is-child box" id="poloshirts">
-                    <p class="title">Poloshirts</p>
-                    <p class="subtitle">Subtitle</p>
+                <article class="tile is-child box" id="polo">
+                    <p class="title">Polo</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
                 </article>
             </div>
             <div class="tile is-parent">
-                <article class="tile is-child box" id="anzuege">
-                    <p class="title">Anzüge</p>
-                    <p class="subtitle">Subtitle</p>
+                <article class="tile is-child box" id="anzug">
+                    <p class="title">Anzug</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
                 </article>
             </div>
         </div>
@@ -68,27 +74,30 @@
             <div class="tile is-parent">
                 <article class="tile is-child box" id="jacken">
                     <p class="title">Jacken</p>
-                    <p class="subtitle">Subtitle</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
                 </article>
             </div>
             <div class="tile is-parent">
                 <article class="tile is-child box" id="pullover">
                     <p class="title">Pullover</p>
-                    <p class="subtitle">Subtitle</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
                 </article>
             </div>
             <div class="tile is-parent">
-                <article class="tile is-child box" id="bla">
-                    <p class="title">bla</p>
-                    <p class="subtitle">Subtitle</p>
-                </article>
-            </div>
+                    <article class="tile is-child box" id="sweatshirt">
+                        <p class="title">Sweatshirt</p>
+                        <!-- <p class="subtitle">Subtitle</p> -->
+                    </article>
+                </div>
             <div class="tile is-parent">
-                <article class="tile is-child box" id="sweatshirt">
-                    <p class="title">Sweatshirt</p>
-                    <p class="subtitle">Subtitle</p>
+                <article class="tile is-child box" id="sakko">
+                    <p class="title">Sakko</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
                 </article>
             </div>
+        </div>
+        <div style="display:none" id="weiterdiv">
+            <a class="button is-success is-pulled-right">Weiter</a>
         </div>
     </div>
     </section>

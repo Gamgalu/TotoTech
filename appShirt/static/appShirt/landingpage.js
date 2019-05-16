@@ -1,7 +1,12 @@
 $( document ).ready(function() {
-    alert("Hello World");
-    function select(was) {
+    jQuery.select = function select(was) {
         $("#" + was).toggleClass("has-background-success");
     }
-    select("anzuege");
+    jQuery.countgreen = function countgreen(was) {
+        var x = $(".has-background-success").length;
+        return x; 
+    }
+
+    // select("anzuege");
+
   }); 
