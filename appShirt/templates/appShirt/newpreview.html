@@ -8,6 +8,14 @@
         <!-- Load Posenet -->
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
 
+        <!-- BEGIN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <!-- END -->
+
+
         <style>
                 #container {
                     margin: 0px auto;
@@ -31,12 +39,47 @@
                 </style>
     </head>
     <body>
+        <!-- BEGIN -->
+        <div class="container">
+        <section class="hero is-danger">
+            <div class="hero-body">
+                <div class="container">
+                    <h2 class="subtitle">
+                        Preview
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <br> 
+        <!-- END -->
+
         <div id="container">
             <video autoplay="true" id="videoElement"></video>
             <canvas id="output"></canvas>
             <p id="demo"></p>
         </div>
-       
+
+        <!-- BEGIN -->
+        <div class="columns is-mobile is-multiline is-centered">
+          <!-- BEGIN VARIANT ELEMENT -->
+          <div class="column is-narrow">
+            <div class="box">
+                <p class="bd-notification is-primary has-text-centered">
+                  <img src="" alt="pic" height="60px" width="60px"><br>
+                  <b>1</b>
+                </p>
+            </div>
+          </div>
+          <!-- END VARIANT ELEMENT -->
+        </div>
+
+
+        </div> 
+        <!-- END -->
+
+
+
+
     </body>
 
     <script src="{% static 'appShirt/preview.js' %}"></script>   
