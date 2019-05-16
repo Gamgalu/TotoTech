@@ -6,5 +6,6 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     path('preview/', views.preview, name='preview'),
     path('', views.landingpage, name='landingpage'),
+    path('matchbox/', views.matchbox, name='matchbox'),
     path('speechapi/', views.speechapi, name='speechapi'),
 ]

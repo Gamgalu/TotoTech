@@ -1,0 +1,102 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'appShirt/landingpage.css' %}">
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matchbox</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<!-- <script src="{% static 'appShirt/landingpage.js' %}"></script> !-->
+
+</head>
+
+<body>
+    <div class="container">
+        <section class="hero is-danger">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        Matchbox
+                    </h1>
+                    <h2 class="subtitle">
+                        Diese Artikel haben dir gefallen
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <br> 
+
+<div class="list is-hoverable">
+<!--### BEGIN LIST ITEM                                  !-->
+  <div class="list-item">
+    <div class="columns">
+        <div class="column is-narrow">
+            <img src="" alt="pic" height="60px" width="60px">
+        </div>
+        <div class="column is-centered">
+            <p class="subtitle">Shirt 1</p>
+        </div>
+        <div class="column">
+
+            <div class="dropdown is-hoverable">
+              <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                  <span>Größe wählen...</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="#" class="dropdown-item">
+                    S
+                  </a>
+                  <a class="dropdown-item">
+                    M
+                  </a>
+                  <a href="#" class="dropdown-item">
+                    L
+                  </a>
+                  <a href="#" class="dropdown-item">
+                    XL
+                  </a>
+                  <a href="#" class="dropdown-item">
+                    XXL
+                  </a>
+                </div>
+              </div>
+            </div>
+
+        </div>
+        <div class="column">
+            <p class="subtitle">19,99 €</p>
+        </div>
+        <div class="column is-narrow">
+            <a class="button">Will ich haben!</a>
+        </div>
+    </div>
+  </div>
+<!--### END LIST ITEM                                    !-->
+</div>
+
+
+    </div>
+    </section>
+    </div>
+</body>
+
+</html>
