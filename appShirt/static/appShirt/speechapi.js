@@ -12,26 +12,15 @@ if (annyang) {
         console.log(myParam);
         $.select(myParam);
         if($.countgreen("") > 0) {
-
-
             $("#weiterdiv").show();
         } else {
             $("#weiterdiv").hide();
         }
     };
 
-    var weiter = function (myParam) {
-        console.log(myParam);
-
-    }
-
-    function iwas(was) {
-        alert("iwas" + was);
-    }
-
-
-    function iwas(was) {
-        alert("iwas" + was);
+    var weiter = function () {
+        console.log("i was here");
+        $("#weiterdiv").click();
     }
 
     var zeigMir = function (nummer) {
@@ -50,7 +39,7 @@ if (annyang) {
         'polo': function() {  auswahl('polo'); },
         'sweatshirt': function() {  auswahl('sweatshirt'); },
         'sakko': function() { auswahl('sakko'); },
-        'weiter': function() { auswahl('weiter'); },
+        'weiter': function() { weiter(); },
     };
 
     // Add our commands to annyang
