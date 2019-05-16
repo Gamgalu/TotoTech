@@ -6,3 +6,8 @@ def index(request):
 def preview(request):
     return render(request, 'appShirt/preview.html')
 
+def landingpage(request):
+    return render(request, 'appShirt/landingpage.html')
+
+def speechapi(request):
+    return render(request, 'appShirt/speechapi.html')
