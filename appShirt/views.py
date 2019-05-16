@@ -6,5 +6,8 @@ def index(request):
 def posenet(request):
     return render(request, 'appShirt/posenet.html')
 
+def landingpage(request):
+    return render(request, 'appShirt/landingpage.html')
+
 def speechapi(request):
     return render(request, 'appShirt/speechapi.html')
