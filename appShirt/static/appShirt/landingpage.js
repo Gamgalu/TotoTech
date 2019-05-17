@@ -7,8 +7,8 @@ $(document).ready(function () {
         return x;
     }
     $("#weiterdiv").click(function () {
-        //alert("Handler for .click() called.");
-        var href = $('.button is-success is-pulled-right').attr('href');
+        // alert("Handler for .click() called.");
+        var href = $('#weiterurl').attr('href');
         window.location.href = href;
     });
 
