@@ -13,7 +13,7 @@
         {
             type: 'template',
             id: 'template',
-            src: 'https://localhost:8000/static/appShirt/landingpage.html'
+            src: 'http://localhost:8000/static/appShirt/landingpage.html'
         },
         {
             type: 'js',
