@@ -9,16 +9,18 @@
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
 
         <style>
-                #container {
-                    margin: 0px auto;
-                    /*width: 800px;
-                    height: 600px;*/
-                    border: 10px #333 solid;
-                }
                 #output {
+                    position: absolute;
                     width: 1024px;
                     height: 768px;
-                    background-color: #666;
+                    z-index: 0;
+                }
+
+                #top {
+                    position: absolute;
+                    width: 1024px;
+                    height: 768px;
+                    z-index: 1;
                 }
 
                 #videoElement {
@@ -34,7 +36,7 @@
         <div id="container">
             <video autoplay="true" id="videoElement"></video>
             <canvas id="output"></canvas>
-            <p id="demo"></p>
+            <canvas id="top"></canvas>
         </div>
        
     </body>
@@ -44,6 +46,16 @@
         var video = document.getElementById('videoElement');
         var canvas = document.getElementById('output');
         var canvasContext = canvas.getContext('2d');
+
+        var ctop = document.getElementById('top');
+        var topContext = ctop.getContext('2d');
+        topContext.save();
+        var shirtImage = new Image();
+        shirtImage.src="{% static 'appShirt/img/32546473fg.png' %}";
+
+        var shirtSize = {};
+        shirtSize.width = 102;
+        shirtSize.height = 76;
 
         function hasGetUserMedia() {
             // Note: Opera builds are unprefixed.
@@ -59,16 +71,44 @@
                     var net = posenet.load().then(function(net){
                         function draw(video, canvasContext, net){
                             canvasContext.drawImage(video, 0,0, canvas.width, canvas.height);
+                            topContext.save();
                             var pose = net.estimateSinglePose(canvas, 0.5, false, 16).then(function(pose){
                                 console.log(pose);
-                                document.getElementById("demo").innerHTML = pose.keypoints[5].position.x + " - " + pose.keypoints[6].position.x;
+
+                                var shoulderMidPoint = {};
+                                shoulderMidPoint.x = (pose.keypoints[5].position.x + pose.keypoints[6].position.x)/2;
+                                shoulderMidPoint.y = (pose.keypoints[5].position.y + pose.keypoints[6].position.y)/2;
+
+                                var hipMidPoint = {};
+                                hipMidPoint.x = (pose.keypoints[11].position.x + pose.keypoints[12].position.x)/2;
+                                hipMidPoint.y = (pose.keypoints[11].position.y + pose.keypoints[12].position.y)/2;
+
+                                var bodyMidPoint = {};
+                                bodyMidPoint.x = (shoulderMidPoint.x + hipMidPoint.x)/2;
+                                bodyMidPoint.y = (shoulderMidPoint.y + hipMidPoint.y)/2;
+                                
+                                console.log(bodyMidPoint.x + " - " + bodyMidPoint.y);
+
+                                var shoulderAngle = Math.atan((pose.keypoints[6].position.y - pose.keypoints[5].position.y) / (pose.keypoints[6].position.x - pose.keypoints[5].position.x))
+
+                                console.log(shoulderAngle);
+                                //topContext.clear();
+                                
+                                //topContext.scale();
+                                topContext.clearRect(0,0, canvas.width, canvas.height);
+                                topContext.translate(-shirtSize.width / 2, -shirtSize.height / 2) ;
+                                topContext.rotate(shoulderAngle);
+                                topContext.translate(shirtSize.width / 2, shirtSize.height / 2) ;
+                                topContext.drawImage(shirtImage,0,0, shirtSize.width, shirtSize.height);
+                                topContext.restore();
 
                                 canvasContext.beginPath();
                                 canvasContext.moveTo(pose.keypoints[5].position.x, pose.keypoints[5].position.y);
                                 canvasContext.lineTo(pose.keypoints[6].position.x, pose.keypoints[6].position.y);
                                 canvasContext.stroke();
 
-                                
+
+
                             })
                             setTimeout(draw, 100, video, canvasContext, net)
                         }
