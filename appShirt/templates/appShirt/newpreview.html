@@ -51,9 +51,10 @@
             </div>
         </section>
         <br>
-        <p onClick="show_next_like()">Gefällt mir!</p>
-        <p onClick="show_next_dislike()">Mag ich nicht!</p>
-        <p onClick="show_next_variante()">Zeig mir nächste Variante.</p>
+        <p class="button is-success" onClick="show_next_like()">Gefällt mir!</p>
+        <p class="button is-danger" onClick="show_next_dislike()">Mag ich nicht!</p>
+        <p class="button is-warning"onClick="show_next_variante()">Zeig mir nächste Variante.</p>
+        <br><br>
         <!-- END -->
 
         <div id="container">
@@ -139,9 +140,10 @@
     <script src="{% static 'appShirt/matchbox.js' %}"></script>
 
     <!-- Logic for getting the tshirts on the side -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script> -->
 
-    <script src="{% static 'appShirt/speechapi_preview.js' %}"></script>
+    <!-- <script src="{% static 'appShirt/speechapi_preview.js' %}"></script> -->
+    <script src="{% static 'appShirt/speechApi_preview_new.js' %}"></script>
 
 
 

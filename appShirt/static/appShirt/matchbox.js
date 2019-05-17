@@ -104,7 +104,7 @@ function get_idid_from_json(produkt_counter,produkt_variante){
 
 function get_picture_from_json(produkt_counter,produkt_variante){
   //console.log(products[produkt_counter].variations);
-  path = '/static/products/' + get_idid_from_json(produkt_counter,produkt_variante) + '_' + get_variationsid_from_json(produkt_counter,produkt_variante) + '.png';
+  path = '/static/products/' + get_idid_from_json(produkt_counter,produkt_variante) + '_' + get_variationsid_from_json(produkt_counter,produkt_variante) + '.png?v=223';
 
   console.log(path);
   return path;
