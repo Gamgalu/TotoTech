@@ -13,6 +13,8 @@ function setze_produkt(counter,variante){
   //  $("#variantenchoice > div").css("background-color", "white");
   //  $("#variantenchoice > div")[variante].css("background-color", "yellow");
   }
+  shirtImage.src = "../.." + get_picture_from_json(counter,variante);
+  console.log("New path to image:", shirtImage.src);
 };
 
 function show_next_like() {
