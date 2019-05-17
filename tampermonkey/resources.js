@@ -13,11 +13,19 @@
         {
             type: 'template',
             id: 'template',
-            src: 'https://hackathon-product-data.serveo.net/helper/test.html'
+            src: 'https://localhost:8000/static/appShirt/landingpage.html'
         },
         {
             type: 'js',
             src: 'https://code.jquery.com/jquery-3.4.1.js'
+        },
+        {
+            type: 'js',
+            src: 'https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet'
+        },
+        {
+            type: 'js',
+            src: 'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs'
         },
         {
             type: 'js',
