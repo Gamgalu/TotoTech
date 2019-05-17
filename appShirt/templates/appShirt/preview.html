@@ -54,8 +54,8 @@
         shirtImage.src="{% static 'appShirt/img/32546473fg.png' %}";
 
         var shirtSize = {};
-        shirtSize.width = 102;
-        shirtSize.height = 76;
+        shirtSize.width = 102*1.7;
+        shirtSize.height = 76*1.7;
 
         function hasGetUserMedia() {
             // Note: Opera builds are unprefixed.
@@ -94,12 +94,14 @@
                                 console.log(shoulderAngle);
                                 //topContext.clear();
 
-                                //topContext.scale();
+                                
                                 topContext.clearRect(0,0, canvas.width, canvas.height);
-                                topContext.translate(-shirtSize.width / 2, -shirtSize.height / 2);
-                                topContext.rotate(shoulderAngle);
-                                topContext.translate(pose.keypoints[6].position.x + (shirtSize.width / 2), pose.keypoints[6].position.y + (shirtSize.height / 2));
+                                //topContext.translate(-shirtSize.width / 2, -shirtSize.height / 2);
+                                //topContext.rotate(shoulderAngle);
+                                //topContext.translate(pose.keypoints[6].position.x + (shirtSize.width / 2), pose.keypoints[6].position.y + (shirtSize.height / 2));
+                                topContext.translate(bodyMidPoint.x - (shirtSize.width/2), bodyMidPoint.y - (shirtSize.width/2));
                                 topContext.drawImage(shirtImage,0,0, shirtSize.width, shirtSize.height);
+                                topContext.scale((pose.keypoints[6].position.x - pose.keypoints[5].position.x)/shirtSize.width,(hipMidPoint.y - shoulderMidPoint.y)/shirtSize.height);
                                 topContext.restore();
 
                                 canvasContext.beginPath();
