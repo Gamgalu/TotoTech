@@ -17,7 +17,8 @@ function setze_produkt(counter,variante){
 
 function show_next_like() {
       // Gefällt mir
-      // TODO Funktion zum adden in Warenkorb callen
+
+      // $.add_to_basket(get_variationsid_from_json(current_product,current_variante),get_articlenumber_from_json(current_product,current_variante));
 
       current_product = current_product + 1;
       if(current_product >= products.products.length) {
@@ -44,6 +45,13 @@ function show_next_variante(){
   setze_produkt(current_product,current_variante);
 }
 
+function show_pick_variante(number){
+  current_variante = number - 1;
+  if(current_variante >= products.products[current_product].variations.length) {
+    current_variante = 0;
+  }
+  setze_produkt(current_product,current_variante);
+}
 
 
 
