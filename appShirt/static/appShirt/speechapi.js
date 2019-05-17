@@ -21,7 +21,7 @@ if (annyang) {
     var weiter = function () {
          console.log("i was here");
         $("#weiterdiv").click();
-    }
+    };
 
     var zeigMir = function (nummer) {
         console.log(nummer)
