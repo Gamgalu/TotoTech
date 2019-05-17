@@ -5,6 +5,14 @@
         <!-- Load Posenet -->
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
 
+        <!-- BEGIN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <!-- END -->
+
+
         <style>
                 #output {
                     position: absolute;
@@ -30,11 +38,39 @@
                 </style>
     </head>
     <body>
+      <!-- BEGIN -->
+      <div class="container">
+      <section class="hero is-danger">
+          <div class="hero-body">
+              <div class="container">
+                  <h2 class="subtitle">
+                      Preview
+                  </h2>
+              </div>
+          </div>
+      </section>
+      <br>
+      <p class="button is-success" onClick="show_next_like()">Gefällt mir!</p>
+      <p class="button is-danger" onClick="show_next_dislike()">Mag ich nicht!</p>
+      <p class="button is-warning"onClick="show_next_variante()">Zeig mir nächste Variante.</p>
+      <br><br>
+      <!-- END -->
+
+
         <div id="container">
             <video autoplay="true" id="videoElement"></video>
             <canvas id="output"></canvas>
             <canvas id="top"></canvas>
         </div>
+
+        <!-- BEGIN -->
+        <div id="variantenchoice" class="columns is-mobile is-multiline is-centered">
+
+        </div>
+
+
+        </div>
+        <!-- END -->
 
     </body>
     <script>
@@ -55,7 +91,7 @@
         shirtJoints.leftShoulder = [100,120];
         shirtJoints.rightShoulder = [320,120];
         shirtJoints.leftHip = [100,500];
-        shirtJoints.rightHip = [320,500]; 
+        shirtJoints.rightHip = [320,500];
 
         var shirtSize = {};
         shirtSize.width = shirtImage.width * scalingFactorWidth;
@@ -117,7 +153,7 @@
 
                                 console.log("shoulderAngle " + shoulderAngle);
 
-                                
+
                                 topContext.clearRect(0,0, canvas.width, canvas.height);
                                 //topContext.translate(-shirtSize.width / 2, -shirtSize.height / 2);
                                 //topContext.rotate(shoulderAngle);
@@ -155,5 +191,13 @@
             alert('getUserMedia() is not supported in your browser');
         }
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+
+    <!-- <script src="{% static 'appShirt/matchbox.js' %}"></script> -->
+
+    <!-- Logic for getting the tshirts on the side -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script> -->
+
+    <!-- <script src="{% static 'appShirt/speechapi_preview.js' %}"></script> -->
+    <script src="{% static 'appShirt/speechApi_preview_new.js' %}"></script>
+
 </html>
