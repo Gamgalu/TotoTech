@@ -5,15 +5,13 @@ if (annyang) {
   var chooseItem = function() {
     // TODO: Add functionality for choosing an item for the matchbox and afterwards showing the next item here
     console.log('Choose Item');
-
-
-
-    $.add_to_basket(variationId,articleNumber);
+    show_next_like();
   }
 
   var rejectItem = function() {
     // TODO: Add functionality for rejecting an item and showing the next item here
     console.log('Reject Item');
+    show_next_dislike();
   }
 
   var pickNumber = function(nummer) {
@@ -43,6 +41,8 @@ if (annyang) {
 
     if (Number.isInteger(integerFromVoice)) {
       console.log('Passed Output:' + integerFromVoice);
+
+      show_pick_variante(integerFromVoice);
     }
     else {
       // Keine Zahl verstanden
