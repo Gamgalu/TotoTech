@@ -5,6 +5,10 @@ if (annyang) {
   var chooseItem = function() {
     // TODO: Add functionality for choosing an item for the matchbox and afterwards showing the next item here
     console.log('Choose Item');
+
+
+
+    $.add_to_basket(variationId,articleNumber);
   }
 
   var rejectItem = function() {

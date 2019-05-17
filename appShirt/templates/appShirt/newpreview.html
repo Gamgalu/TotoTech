@@ -50,7 +50,7 @@
                 </div>
             </div>
         </section>
-        <br> 
+        <br>
         <!-- END -->
 
         <div id="container">
@@ -74,7 +74,7 @@
         </div>
 
 
-        </div> 
+        </div>
         <!-- END -->
 
 
@@ -82,7 +82,7 @@
 
     </body>
 
-    <script src="{% static 'appShirt/preview.js' %}"></script>   
+    <script src="{% static 'appShirt/preview.js' %}"></script>
     <script>
         var video = document.getElementById('videoElement');
         var canvas = document.getElementById('output');
@@ -111,7 +111,7 @@
                                 canvasContext.lineTo(pose.keypoints[6].position.x, pose.keypoints[6].position.y);
                                 canvasContext.stroke();
 
-                                
+
                             })
                             setTimeout(draw, 100, video, canvasContext, net)
                         }
@@ -142,5 +142,13 @@
         }
     </script>
 
+
+
+    <!-- Logic for getting the tshirts on the side -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+
+    <script src="{% static 'appShirt/speechapi_preview.js' %}"></script>
+    
+    <script src="{% static 'appShirt/matchbox.js' %}"></script>
 
 </html>

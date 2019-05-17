@@ -38,10 +38,10 @@
             <canvas id="output"></canvas>
             <canvas id="top"></canvas>
         </div>
-       
+
     </body>
 
-    <script src="{% static 'appShirt/preview.js' %}"></script>   
+    <script src="{% static 'appShirt/preview.js' %}"></script>
     <script>
         var video = document.getElementById('videoElement');
         var canvas = document.getElementById('output');
@@ -86,14 +86,14 @@
                                 var bodyMidPoint = {};
                                 bodyMidPoint.x = (shoulderMidPoint.x + hipMidPoint.x)/2;
                                 bodyMidPoint.y = (shoulderMidPoint.y + hipMidPoint.y)/2;
-                                
+
                                 console.log(bodyMidPoint.x + " - " + bodyMidPoint.y);
 
                                 var shoulderAngle = Math.atan((pose.keypoints[6].position.y - pose.keypoints[5].position.y) / (pose.keypoints[6].position.x - pose.keypoints[5].position.x))
 
                                 console.log(shoulderAngle);
                                 //topContext.clear();
-                                
+
                                 //topContext.scale();
                                 topContext.clearRect(0,0, canvas.width, canvas.height);
                                 topContext.translate(-shirtSize.width / 2, -shirtSize.height / 2);
@@ -138,6 +138,9 @@
             alert('getUserMedia() is not supported in your browser');
         }
     </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+
+    <script src="{% static 'appShirt/speechapi_preview.js' %}"></script>
 
 
 </html>
