@@ -51,11 +51,17 @@
         var topContext = ctop.getContext('2d');
         topContext.save();
         var shirtImage = new Image();
-        shirtImage.src="{% static 'appShirt/img/32546473fg.png' %}";
+        shirtImage.src="{% static 'appShirt/img/538986060_696995491.png' %}";
+
+        var scalingFactorHeight = 0.33;
+        var scalingFactorWidth = 0.4;
 
         var shirtSize = {};
-        shirtSize.width = 102*1.7;
-        shirtSize.height = 76*1.7;
+        shirtSize.width = shirtImage.width * scalingFactorWidth;
+        shirtSize.height = shirtImage.height * scalingFactorHeight;
+
+        console.log(shirtSize.width);
+        console.log(shirtSize.height);
 
         function hasGetUserMedia() {
             // Note: Opera builds are unprefixed.
@@ -73,7 +79,7 @@
                             canvasContext.drawImage(video, 0,0, canvas.width, canvas.height);
                             topContext.save();
                             var pose = net.estimateSinglePose(canvas, 0.5, false, 16).then(function(pose){
-                                console.log(pose);
+                                //console.log(pose);
 
                                 var shoulderMidPoint = {};
                                 shoulderMidPoint.x = (pose.keypoints[5].position.x + pose.keypoints[6].position.x)/2;
@@ -91,24 +97,23 @@
 
                                 var shoulderAngle = Math.atan((pose.keypoints[6].position.y - pose.keypoints[5].position.y) / (pose.keypoints[6].position.x - pose.keypoints[5].position.x))
 
-                                console.log(shoulderAngle);
-                                //topContext.clear();
+                                console.log("shoulderAngle " + shoulderAngle);
 
                                 
                                 topContext.clearRect(0,0, canvas.width, canvas.height);
                                 //topContext.translate(-shirtSize.width / 2, -shirtSize.height / 2);
                                 //topContext.rotate(shoulderAngle);
                                 //topContext.translate(pose.keypoints[6].position.x + (shirtSize.width / 2), pose.keypoints[6].position.y + (shirtSize.height / 2));
-                                topContext.translate(bodyMidPoint.x - (shirtSize.width/2), bodyMidPoint.y - (shirtSize.width/2));
+                                topContext.translate(bodyMidPoint.x - (shirtSize.width/2), bodyMidPoint.y - (shirtSize.height/2));
                                 topContext.drawImage(shirtImage,0,0, shirtSize.width, shirtSize.height);
-                                topContext.scale((pose.keypoints[6].position.x - pose.keypoints[5].position.x)/shirtSize.width,(hipMidPoint.y - shoulderMidPoint.y)/shirtSize.height);
                                 topContext.restore();
 
+                                /*
                                 canvasContext.beginPath();
                                 canvasContext.moveTo(pose.keypoints[5].position.x, pose.keypoints[5].position.y);
                                 canvasContext.lineTo(pose.keypoints[6].position.x, pose.keypoints[6].position.y);
                                 canvasContext.stroke();
-
+                                */
 
 
                             })
