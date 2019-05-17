@@ -9,8 +9,7 @@ $(document).ready(function () {
     $("#weiterdiv").click(function () {
         // alert("Handler for .click() called.");
         var href = $('#weiterurl').attr('href');
-        window.location.href = href; 
+        window.location.href = href;
     });
 
 });
-
