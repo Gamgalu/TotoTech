@@ -2,7 +2,6 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'appShirt/preview.css' %}">
         <!-- Load TensorFlow.js -->
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
         <!-- Load Posenet -->
@@ -40,8 +39,6 @@
         </div>
 
     </body>
-
-    <script src="{% static 'appShirt/preview.js' %}"></script>
     <script>
         var video = document.getElementById('videoElement');
         var canvas = document.getElementById('output');
@@ -51,7 +48,7 @@
         var topContext = ctop.getContext('2d');
         topContext.save();
         var shirtImage = new Image();
-        shirtImage.src="{% static 'appShirt/img/538986060_696995164.png' %}";
+        shirtImage.src="../../static/appShirt/img/538986060_696995164.png";
 
         var scalingFactorHeight = 1;
         var scalingFactorWidth = 1;
@@ -161,8 +158,4 @@
         }
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
-
-    <script src="{% static 'appShirt/speechapi_preview.js' %}"></script>
-
-
 </html>
