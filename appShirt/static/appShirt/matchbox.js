@@ -55,6 +55,9 @@ function show_pick_variante(number){
   setze_produkt(current_product,current_variante);
 }
 
+function finish(){
+  console.log('FInish');
+}
 
 
 function fill_varianten(produkt_counter,produkt_variante){

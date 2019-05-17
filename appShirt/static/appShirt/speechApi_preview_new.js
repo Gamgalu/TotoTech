@@ -15,7 +15,9 @@ recognition.onend = function() {
     //chooseItem
   	if (splittedTranscript[0] === 'geil' ||
       (splittedTranscript[0] === 'gefällt' && splittedTranscript[1] === 'mir' && splittedTranscript.length == 2) ||
-      (splittedTranscript[0] === 'mag' && splittedTranscript[1] === 'ich'&& splittedTranscript.length == 2)  )
+      (splittedTranscript[0] === 'mag' && splittedTranscript[1] === 'ich'&& splittedTranscript.length == 2) ||
+      (splittedTranscript[0] === 'will' && splittedTranscript[1] === 'ich' && splittedTranscript[2] === 'haben')
+     )
     {
   		console.log('Like Item');
       show_next_like();
@@ -31,10 +33,16 @@ recognition.onend = function() {
         show_next_dislike();
       }
 
-    //andere Farbe
+    // andere Farbe
     if (splittedTranscript[0] === 'andere' && splittedTranscript[1] === 'farbe'){
       console.log('Change color');
       show_next_variante();
+    }
+
+    // Ende
+    if (splittedTranscript[0] === 'ende' || splittedTranscript[0] === 'fertig'){
+      console.log('Finish');
+      finish();
     }
   }
 
