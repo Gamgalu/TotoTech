@@ -57,14 +57,14 @@
         var scalingFactorWidth = 1;
 
         var shirtJoints = {};
-        shirtJoints.leftShoulder = [100,150];
-        shirtJoints.rightShoulder = [320,150];
+        shirtJoints.leftShoulder = [100,120];
+        shirtJoints.rightShoulder = [320,120];
         shirtJoints.leftHip = [100,500];
         shirtJoints.rightHip = [320,500]; 
 
         var shirtSize = {};
         shirtSize.width = shirtImage.width * scalingFactorWidth;
-        shirtSize.height = shirtImage.height * scalingFactorHeight + 100;
+        shirtSize.height = shirtImage.height * scalingFactorHeight;
 
         console.log(shirtSize.width);
         console.log(shirtSize.height);
@@ -103,12 +103,15 @@
                                 var shirtLeftShoulderMidBodyDist = Math.sqrt(Math.pow(shirtJoints.leftShoulder[0] - shirtImage.width, 2) + Math.pow(shirtJoints.leftShoulder[1] - shirtImage.height, 2));
                                 var bodyLeftShoulderMidBodyDist = Math.sqrt(Math.pow(pose.keypoints[5].position.x - bodyMidPoint.x, 2) + Math.pow(pose.keypoints[5].position.y - bodyMidPoint.y, 2));
 
-                                var scalingRatio = 3 * bodyLeftShoulderMidBodyDist/shirtLeftShoulderMidBodyDist;
+                                var shirtRightShoulderMidBodyDist = Math.sqrt(Math.pow(shirtJoints.rightShoulder[0] - shirtImage.width, 2) + Math.pow(shirtJoints.rightShoulder[1] - shirtImage.height, 2));
+                                var bodyRightShoulderMidBodyDist = Math.sqrt(Math.pow(pose.keypoints[6].position.x - bodyMidPoint.x, 2) + Math.pow(pose.keypoints[6].position.y - bodyMidPoint.y, 2));
+
+                                var scalingRatio = 3 * (bodyLeftShoulderMidBodyDist/shirtLeftShoulderMidBodyDist + bodyRightShoulderMidBodyDist/shirtRightShoulderMidBodyDist)/2;
 
                                 console.log("scaling: " + scalingRatio);
 
-                                scalingFactorWidth = scalingRatio * 1;
-                                scalingFactorHeight = scalingRatio * 0.9;
+                                scalingFactorWidth = scalingRatio;
+                                scalingFactorHeight = scalingRatio * 0.7;
 
                                 shirtSize.width = shirtImage.width * scalingFactorWidth;
                                 shirtSize.height = shirtImage.height * scalingFactorHeight;
@@ -124,7 +127,7 @@
                                 //topContext.translate(-shirtSize.width / 2, -shirtSize.height / 2);
                                 //topContext.rotate(shoulderAngle);
                                 //topContext.translate(pose.keypoints[6].position.x + (shirtSize.width / 2), pose.keypoints[6].position.y + (shirtSize.height / 2));
-                                topContext.translate(bodyMidPoint.x - (shirtSize.width/2), 4 + bodyMidPoint.y - (shirtSize.height/2));
+                                topContext.translate(bodyMidPoint.x - (shirtSize.width/2), -14 + bodyMidPoint.y - (shirtSize.height/2));
                                 topContext.drawImage(shirtImage,0,0, shirtSize.width, shirtSize.height);
                                 topContext.restore();
 
