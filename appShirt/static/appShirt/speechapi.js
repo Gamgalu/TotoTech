@@ -28,37 +28,44 @@ recognition.onend = function() {
   	// const action = splittedTranscript.slice(0).join(' ');
   	// const value = splittedTranscript.slice(1).join(' ');
 
-    if (splittedTranscript[0] === 'pullover'){
-      console.log('Pullover');
-      auswahl('pullover');
+    for(i = 0; i < splittedTranscript.length; i++ ){
+
+      if (splittedTranscript[i] === 'pullover'){
+        console.log('Pullover');
+        auswahl('pullover');
+      }
+      if (splittedTranscript[i] === 'shirt'){
+        auswahl('shirt');
+      }
+      if (splittedTranscript[i] === 'schlafshirt'){
+        auswahl('schlafshirt');
+      }
+      if (splittedTranscript[i] === 'poloshirt'){
+        auswahl('poloshirt');
+      }
+      if (splittedTranscript[i] === 'anzug'){
+        auswahl('anzug');
+      }
+      if (splittedTranscript[i] === 'jacken'){
+        auswahl('jacken');
+      }
+      if (splittedTranscript[i] === 'polo'){
+        auswahl('polo');
+      }
+      if (splittedTranscript[i] === 'sweatshirt'){
+        auswahl('sweatshirt');
+      }
+      if (splittedTranscript[i] === 'sakko'){
+         auswahl('sakko');
+      }
+      if (splittedTranscript[i] === 'weiter'){
+        weiter();
+      }
+
     }
-    if (splittedTranscript[0] === 'shirt'){
-      auswahl('thsirt');
-    }
-    if (splittedTranscript[0] === 'schlafshirt'){
-      auswahl('schlafshirt');
-    }
-    if (splittedTranscript[0] === 'poloshirt'){
-      auswahl('poloshirt');
-    }
-    if (splittedTranscript[0] === 'anzug'){
-      auswahl('anzug');
-    }
-    if (splittedTranscript[0] === 'jacken'){
-      auswahl('jacken');
-    }
-    if (splittedTranscript[0] === 'polo'){
-      auswahl('polo');
-    }
-    if (splittedTranscript[0] === 'sweatshirt'){
-      auswahl('sweatshirt');
-    }
-    if (splittedTranscript[0] === 'sakko'){
-       auswahl('sakko');
-    }
-    if (splittedTranscript[0] === 'weiter'){
-      weiter();
-    }
+
+
+
   }
 
   finalTranscript = '';
