@@ -20,7 +20,11 @@ if (annyang) {
 
     var weiter = function () {
         console.log("i was here");
-        $("#weiterdiv").click();
+        $("#weiterdiv").click(function () {
+            // alert("Handler for .click() called.");
+            var href = $('.button is-success is-pulled-right').attr('href');
+            window.location.href = href; 
+        });
     }
 
     var zeigMir = function (nummer) {
