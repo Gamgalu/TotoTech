@@ -51,14 +51,20 @@
         var topContext = ctop.getContext('2d');
         topContext.save();
         var shirtImage = new Image();
-        shirtImage.src="{% static 'appShirt/img/538986060_696995491.png' %}";
+        shirtImage.src="{% static 'appShirt/img/538986060_538985985.png' %}";
 
-        var scalingFactorHeight = 0.33;
-        var scalingFactorWidth = 0.4;
+        var scalingFactorHeight = 1;
+        var scalingFactorWidth = 1;
+
+        var shirtJoints = {};
+        shirtJoints.leftShoulder = [100,150];
+        shirtJoints.rightShoulder = [320,150];
+        shirtJoints.leftHip = [100,500];
+        shirtJoints.rightHip = [320,500]; 
 
         var shirtSize = {};
         shirtSize.width = shirtImage.width * scalingFactorWidth;
-        shirtSize.height = shirtImage.height * scalingFactorHeight;
+        shirtSize.height = shirtImage.height * scalingFactorHeight + 100;
 
         console.log(shirtSize.width);
         console.log(shirtSize.height);
@@ -73,13 +79,14 @@
             console.log('is supported!')
             if (navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
-
+                    //load the posenet model
                     var net = posenet.load().then(function(net){
+                        //define a draw function
                         function draw(video, canvasContext, net){
+                            //draw the video feed from the camera onto the canvas
                             canvasContext.drawImage(video, 0,0, canvas.width, canvas.height);
                             topContext.save();
                             var pose = net.estimateSinglePose(canvas, 0.5, false, 16).then(function(pose){
-                                //console.log(pose);
 
                                 var shoulderMidPoint = {};
                                 shoulderMidPoint.x = (pose.keypoints[5].position.x + pose.keypoints[6].position.x)/2;
@@ -93,6 +100,19 @@
                                 bodyMidPoint.x = (shoulderMidPoint.x + hipMidPoint.x)/2;
                                 bodyMidPoint.y = (shoulderMidPoint.y + hipMidPoint.y)/2;
 
+                                var shirtLeftShoulderMidBodyDist = Math.sqrt(Math.pow(shirtJoints.leftShoulder[0] - shirtImage.width, 2) + Math.pow(shirtJoints.leftShoulder[1] - shirtImage.height, 2));
+                                var bodyLeftShoulderMidBodyDist = Math.sqrt(Math.pow(pose.keypoints[5].position.x - bodyMidPoint.x, 2) + Math.pow(pose.keypoints[5].position.y - bodyMidPoint.y, 2));
+
+                                var scalingRatio = 3 * bodyLeftShoulderMidBodyDist/shirtLeftShoulderMidBodyDist;
+
+                                console.log("scaling: " + scalingRatio);
+
+                                scalingFactorWidth = scalingRatio * 1;
+                                scalingFactorHeight = scalingRatio * 0.9;
+
+                                shirtSize.width = shirtImage.width * scalingFactorWidth;
+                                shirtSize.height = shirtImage.height * scalingFactorHeight;
+
                                 console.log(bodyMidPoint.x + " - " + bodyMidPoint.y);
 
                                 var shoulderAngle = Math.atan((pose.keypoints[6].position.y - pose.keypoints[5].position.y) / (pose.keypoints[6].position.x - pose.keypoints[5].position.x))
@@ -104,11 +124,12 @@
                                 //topContext.translate(-shirtSize.width / 2, -shirtSize.height / 2);
                                 //topContext.rotate(shoulderAngle);
                                 //topContext.translate(pose.keypoints[6].position.x + (shirtSize.width / 2), pose.keypoints[6].position.y + (shirtSize.height / 2));
-                                topContext.translate(bodyMidPoint.x - (shirtSize.width/2), bodyMidPoint.y - (shirtSize.height/2));
+                                topContext.translate(bodyMidPoint.x - (shirtSize.width/2), 4 + bodyMidPoint.y - (shirtSize.height/2));
                                 topContext.drawImage(shirtImage,0,0, shirtSize.width, shirtSize.height);
                                 topContext.restore();
 
                                 /*
+                                draws a line between the shoulders
                                 canvasContext.beginPath();
                                 canvasContext.moveTo(pose.keypoints[5].position.x, pose.keypoints[5].position.y);
                                 canvasContext.lineTo(pose.keypoints[6].position.x, pose.keypoints[6].position.y);
@@ -126,15 +147,6 @@
                             draw(video, canvasContext, net);
                         }, false);
                     });
-
-
-
-                     // load the posenet model
-                    /*posenet.load().then(function(net){
-                        return net.estimateSinglePose(canvasContext, imageScaleFactor, flipHorizontal, outputStride)
-                    }).then(function(pose){
-                        console.log(pose);
-                    });*/
 
                 }).catch(function (err) {
                     console.log("Something went wrong!");
