@@ -1,3 +1,4 @@
+{% load static %}
 <html>
     <head>
         <!-- Load TensorFlow.js -->
@@ -56,23 +57,30 @@
       <br><br>
       <!-- END -->
 
+      <!-- BEGIN -->
+      <div id="variantenchoice" class="columns is-mobile is-multiline is-centered">
+
+      </div>
 
         <div id="container">
             <video autoplay="true" id="videoElement"></video>
             <canvas id="output"></canvas>
             <canvas id="top"></canvas>
+            <p id="demo"></p>
         </div>
 
-        <!-- BEGIN -->
-        <div id="variantenchoice" class="columns is-mobile is-multiline is-centered">
 
-        </div>
 
 
         </div>
         <!-- END -->
 
     </body>
+
+    <script src="{% static 'appShirt/matchbox.js' %}"></script>
+
+  <script src="{% static 'appShirt/speechApi_preview_new.js' %}"></script>
+
     <script>
         var video = document.getElementById('videoElement');
         var canvas = document.getElementById('output');
@@ -192,12 +200,13 @@
         }
     </script>
 
-    <!-- <script src="{% static 'appShirt/matchbox.js' %}"></script> -->
+
+
 
     <!-- Logic for getting the tshirts on the side -->
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script> -->
 
-    <!-- <script src="{% static 'appShirt/speechapi_preview.js' %}"></script> -->
-    <script src="{% static 'appShirt/speechApi_preview_new.js' %}"></script>
+
+
 
 </html>
