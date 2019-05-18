@@ -1,0 +1,150 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'appShirt/preview.css' %}">
+        <!-- Load TensorFlow.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+        <!-- Load Posenet -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+
+        <!-- BEGIN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <!-- END -->
+
+
+        <style>
+                #container {
+                    margin: 0px auto;
+                    /*width: 800px;
+                    height: 600px;*/
+                    border: 10px #333 solid;
+                }
+                #output {
+                    width: 1024px;
+                    height: 768px;
+                    background-color: #666;
+                }
+
+                #videoElement {
+                    width: 1024px;
+                    height: 768px;
+                    background-color: #666;
+                    visibility: hidden;
+                    display: none;
+                }
+                </style>
+    </head>
+    <body>
+        <!-- BEGIN -->
+        <div class="container">
+        <section class="hero is-danger">
+            <div class="hero-body">
+                <div class="container">
+                    <h2 class="subtitle">
+                        Preview
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <br>
+        <p class="button is-success" onClick="show_next_like()">Gefällt mir!</p>
+        <p class="button is-danger" onClick="show_next_dislike()">Mag ich nicht!</p>
+        <p class="button is-warning"onClick="show_next_variante()">Zeig mir nächste Variante.</p>
+        <br><br>
+        <!-- END -->
+
+        <div id="container">
+            <video autoplay="true" id="videoElement"></video>
+            <canvas id="output"></canvas>
+            <p id="demo"></p>
+        </div>
+
+        <!-- BEGIN -->
+        <div id="variantenchoice" class="columns is-mobile is-multiline is-centered">
+
+        </div>
+
+
+        </div>
+        <!-- END -->
+
+
+
+
+    </body>
+
+    <script src="{% static 'appShirt/preview.js' %}"></script>
+    <script>
+        var video = document.getElementById('videoElement');
+        var canvas = document.getElementById('output');
+        var canvasContext = canvas.getContext('2d');
+
+        function hasGetUserMedia() {
+            // Note: Opera builds are unprefixed.
+            return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                        navigator.mozGetUserMedia || navigator.msGetUserMedia);
+            }
+
+        if (hasGetUserMedia()) {
+            console.log('is supported!')
+            if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+
+                    var net = posenet.load().then(function(net){
+                        function draw(video, canvasContext, net){
+                            canvasContext.drawImage(video, 0,0, canvas.width, canvas.height);
+                            var pose = net.estimateSinglePose(canvas, 0.5, false, 16).then(function(pose){
+                                console.log(pose);
+                                document.getElementById("demo").innerHTML = pose.keypoints[5].position.x + " - " + pose.keypoints[6].position.x;
+
+                                canvasContext.beginPath();
+                                canvasContext.moveTo(pose.keypoints[5].position.x, pose.keypoints[5].position.y);
+                                canvasContext.lineTo(pose.keypoints[6].position.x, pose.keypoints[6].position.y);
+                                canvasContext.stroke();
+
+
+                            })
+                            setTimeout(draw, 100, video, canvasContext, net)
+                        }
+
+                        video.srcObject = stream;
+
+                        video.addEventListener('play', function(){
+                            draw(video, canvasContext, net);
+                        }, false);
+                    });
+
+
+
+                     // load the posenet model
+                    /*posenet.load().then(function(net){
+                        return net.estimateSinglePose(canvasContext, imageScaleFactor, flipHorizontal, outputStride)
+                    }).then(function(pose){
+                        console.log(pose);
+                    });*/
+
+                }).catch(function (err) {
+                    console.log("Something went wrong!");
+                    console.log(err)
+                });
+            }
+        } else {
+            alert('getUserMedia() is not supported in your browser');
+        }
+    </script>
+
+    <script src="{% static 'appShirt/matchbox.js' %}"></script>
+
+    <!-- Logic for getting the tshirts on the side -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script> -->
+
+    <!-- <script src="{% static 'appShirt/speechapi_preview.js' %}"></script> -->
+    <script src="{% static 'appShirt/speechApi_preview_new.js' %}"></script>
+
+
+
+</html>

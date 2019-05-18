@@ -1,0 +1,108 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'appShirt/landingpage.css' %}">
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShirtFinder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="{% static 'appShirt/landingpage.js' %}"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+
+<script src="{% static 'appShirt/speechapi.js' %}"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <section class="hero is-danger">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        ShirtFinder
+                    </h1>
+                    <h2 class="subtitle">
+                        Sprechen Sie bitte nur eine Kategorie aus und warten Sie, bis es grün aufleuchtet. <br>
+                        Anschließend sagen Sie weiter.
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <br>
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <article class="tile is-child box" id="shirt">
+                    <p class="title">Shirt</p>
+                    <!-- <p class="subtitle">ddffffd</p> -->
+                </article>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child box" id="schlafshirt">
+                    <p class="title">Schlafshirt</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
+                </article>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child box" id="polo">
+                    <p class="title">Polo</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
+                </article>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child box" id="anzug">
+                    <p class="title">Anzug</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
+                </article>
+            </div>
+        </div>
+
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <article class="tile is-child box" id="jacken">
+                    <p class="title">Jacken</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
+                </article>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child box" id="pullover">
+                    <p class="title">Pullover</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
+                </article>
+            </div>
+            <div class="tile is-parent">
+                    <article class="tile is-child box" id="sweatshirt">
+                        <p class="title">Sweatshirt</p>
+                        <!-- <p class="subtitle">Subtitle</p> -->
+                    </article>
+                </div>
+            <div class="tile is-parent">
+                <article class="tile is-child box" id="sakko">
+                    <p class="title">Sakko</p>
+                    <!-- <p class="subtitle">Subtitle</p> -->
+                </article>
+            </div>
+        </div>
+        <div style="display:none" id="weiterdiv">
+            <a href="http://localhost:8000/appShirt/preview" id="weiterurl" class="button is-success is-pulled-right">Weiter</a>
+        </div>
+    </div>
+    </section>
+    </div>
+</body>
+
+</html>

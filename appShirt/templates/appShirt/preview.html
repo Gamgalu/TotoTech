@@ -1,0 +1,208 @@
+{% load static %}
+<html>
+    <head>
+        <!-- Load TensorFlow.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+        <!-- Load Posenet -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+
+        <!-- BEGIN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <!-- END -->
+
+
+        <style>
+                #output {
+                    position: absolute;
+                    width: 1024px;
+                    height: 768px;
+                    z-index: 0;
+                }
+
+                #top {
+                    position: absolute;
+                    width: 1024px;
+                    height: 768px;
+                    z-index: 1;
+                }
+
+                #videoElement {
+                    width: 1024px;
+                    height: 768px;
+                    background-color: #666;
+                    visibility: hidden;
+                    display: none;
+                }
+                </style>
+    </head>
+    <body>
+      <!-- BEGIN -->
+      <div class="container">
+      <section class="hero is-danger">
+          <div class="hero-body">
+              <div class="container">
+                  <h2 class="subtitle">
+                      Preview
+                  </h2>
+              </div>
+          </div>
+      </section>
+      <br>
+      <p class="button is-success" onClick="show_next_like()">Gefällt mir!</p>
+      <p class="button is-danger" onClick="show_next_dislike()">Mag ich nicht!</p>
+      <p class="button is-warning"onClick="show_next_variante()">Zeig mir nächste Variante.</p>
+      <p class="button is-warning"onClick="finish()">Ende</p>
+      <br><br>
+      <!-- END -->
+
+      <!-- BEGIN -->
+      <div id="variantenchoice" class="columns is-mobile is-multiline is-centered">
+
+      </div>
+
+        <div id="container">
+            <video autoplay="true" id="videoElement"></video>
+            <canvas id="output"></canvas>
+            <canvas id="top"></canvas>
+            <p id="demo"></p>
+        </div>
+
+
+
+
+        </div>
+        <!-- END -->
+
+    </body>
+
+
+
+    <script>
+        var video = document.getElementById('videoElement');
+        var canvas = document.getElementById('output');
+        var canvasContext = canvas.getContext('2d');
+
+        var ctop = document.getElementById('top');
+        var topContext = ctop.getContext('2d');
+        topContext.save();
+        var shirtImage = new Image();
+        shirtImage.src="../../static/appShirt/img/538986060_696995164.png";
+
+        var scalingFactorHeight = 1;
+        var scalingFactorWidth = 1;
+
+        var shirtJoints = {};
+        shirtJoints.leftShoulder = [100,120];
+        shirtJoints.rightShoulder = [320,120];
+        shirtJoints.leftHip = [100,500];
+        shirtJoints.rightHip = [320,500];
+
+        var shirtSize = {};
+        shirtSize.width = shirtImage.width * scalingFactorWidth;
+        shirtSize.height = shirtImage.height * scalingFactorHeight;
+
+        console.log(shirtSize.width);
+        console.log(shirtSize.height);
+
+        function hasGetUserMedia() {
+            // Note: Opera builds are unprefixed.
+            return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                        navigator.mozGetUserMedia || navigator.msGetUserMedia);
+            }
+
+        if (hasGetUserMedia()) {
+            console.log('is supported!')
+            if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+                    //load the posenet model
+                    var net = posenet.load().then(function(net){
+                        //define a draw function
+                        function draw(video, canvasContext, net){
+                            //draw the video feed from the camera onto the canvas
+                            canvasContext.drawImage(video, 0,0, canvas.width, canvas.height);
+                            topContext.save();
+                            var pose = net.estimateSinglePose(canvas, 0.5, false, 16).then(function(pose){
+
+                                var shoulderMidPoint = {};
+                                shoulderMidPoint.x = (pose.keypoints[5].position.x + pose.keypoints[6].position.x)/2;
+                                shoulderMidPoint.y = (pose.keypoints[5].position.y + pose.keypoints[6].position.y)/2;
+
+                                var hipMidPoint = {};
+                                hipMidPoint.x = (pose.keypoints[11].position.x + pose.keypoints[12].position.x)/2;
+                                hipMidPoint.y = (pose.keypoints[11].position.y + pose.keypoints[12].position.y)/2;
+
+                                var bodyMidPoint = {};
+                                bodyMidPoint.x = (shoulderMidPoint.x + hipMidPoint.x)/2;
+                                bodyMidPoint.y = (shoulderMidPoint.y + hipMidPoint.y)/2;
+
+                                var shirtLeftShoulderMidBodyDist = Math.sqrt(Math.pow(shirtJoints.leftShoulder[0] - shirtImage.width, 2) + Math.pow(shirtJoints.leftShoulder[1] - shirtImage.height, 2));
+                                var bodyLeftShoulderMidBodyDist = Math.sqrt(Math.pow(pose.keypoints[5].position.x - bodyMidPoint.x, 2) + Math.pow(pose.keypoints[5].position.y - bodyMidPoint.y, 2));
+
+                                var shirtRightShoulderMidBodyDist = Math.sqrt(Math.pow(shirtJoints.rightShoulder[0] - shirtImage.width, 2) + Math.pow(shirtJoints.rightShoulder[1] - shirtImage.height, 2));
+                                var bodyRightShoulderMidBodyDist = Math.sqrt(Math.pow(pose.keypoints[6].position.x - bodyMidPoint.x, 2) + Math.pow(pose.keypoints[6].position.y - bodyMidPoint.y, 2));
+
+                                var scalingRatio = 3 * (bodyLeftShoulderMidBodyDist/shirtLeftShoulderMidBodyDist + bodyRightShoulderMidBodyDist/shirtRightShoulderMidBodyDist)/2;
+
+                                console.log("scaling: " + scalingRatio);
+
+                                scalingFactorWidth = scalingRatio;
+                                scalingFactorHeight = scalingRatio * 0.7;
+
+                                shirtSize.width = shirtImage.width * scalingFactorWidth;
+                                shirtSize.height = shirtImage.height * scalingFactorHeight;
+
+                                console.log(bodyMidPoint.x + " - " + bodyMidPoint.y);
+
+                                var shoulderAngle = Math.atan((pose.keypoints[6].position.y - pose.keypoints[5].position.y) / (pose.keypoints[6].position.x - pose.keypoints[5].position.x))
+
+                                console.log("shoulderAngle " + shoulderAngle);
+
+
+                                topContext.clearRect(0,0, canvas.width, canvas.height);
+                                //topContext.translate(-shirtSize.width / 2, -shirtSize.height / 2);
+                                //topContext.rotate(shoulderAngle);
+                                //topContext.translate(pose.keypoints[6].position.x + (shirtSize.width / 2), pose.keypoints[6].position.y + (shirtSize.height / 2));
+                                topContext.translate(bodyMidPoint.x - (shirtSize.width/2), -14 + bodyMidPoint.y - (shirtSize.height/2));
+                                topContext.drawImage(shirtImage,0,0, shirtSize.width, shirtSize.height);
+                                topContext.restore();
+
+                                /*
+                                draws a line between the shoulders
+                                canvasContext.beginPath();
+                                canvasContext.moveTo(pose.keypoints[5].position.x, pose.keypoints[5].position.y);
+                                canvasContext.lineTo(pose.keypoints[6].position.x, pose.keypoints[6].position.y);
+                                canvasContext.stroke();
+                                */
+
+
+                            })
+                            setTimeout(draw, 100, video, canvasContext, net)
+                        }
+
+                        video.srcObject = stream;
+
+                        video.addEventListener('play', function(){
+                            draw(video, canvasContext, net);
+                        }, false);
+                    });
+
+                }).catch(function (err) {
+                    console.log("Something went wrong!");
+                    console.log(err)
+                });
+            }
+        } else {
+            alert('getUserMedia() is not supported in your browser');
+        }
+    </script>
+
+    <script src="{% static 'appShirt/matchbox.js' %}"></script>
+
+    <script src="{% static 'appShirt/speechApi_preview_new.js' %}"></script>
+
+
+
+</html>
